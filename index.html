@@ -108,6 +108,38 @@
       border-top: 1px solid rgba(255,255,255,0.08);
       margin: 0;
     }
+
+    .project-modal-resources {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .project-resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid var(--jet);
+      border-radius: 10px;
+      background: var(--bg-gradient-jet);
+      color: var(--orange-yellow-crayola);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.25s ease;
+    }
+
+    .project-resource-link:hover,
+    .project-resource-link:focus-visible {
+      border-color: var(--orange-yellow-crayola);
+      transform: translateY(-1px);
+    }
+
+    .project-resource-link ion-icon {
+      font-size: 18px;
+    }
   </style>
 </head>
 
@@ -273,15 +305,6 @@
               </div>
             </li>
 
-            <!-- Remaining projects will be inserted below in this order:
-                 2. Aggie Bullet: RC Aircraft for 2026 Design, Build, Fly Competition
-                 3. Eagle Scout Service Project
-                 4. SEAMATE ROV
-                 5. Island Tyme Aircraft Maintenance
-                 6. RC Aircraft
-                 7. CAD-Samples
-            -->
-
           </ul>
 
         </section>
@@ -371,10 +394,13 @@
                 data-project-title="RC Powered Glider - Design and Flight Testing"
                 data-project-description="Designed and built a remote-controlled powered glider, using XFLR5 to evaluate stability and aerodynamic performance before flight testing. I analyzed sideslip behavior and key flight characteristics at 88 ft/s and 177 ft/s, then compared the predicted behavior with flight results and iterated the aircraft configuration, including tail changes and 3D-printed winglets."
                 data-project-tech="XFLR5, Fusion 360, 3D Printing, Woodworking, Electronics"
-                data-project-link="./assets/RC_Powered_Glider_Appendix_2.pdf"
+                data-project-link="#"
+                data-project-resources='[
+                  {"href":"./assets/RC_Powered_Glider_Appendix.pdf","label":"Appendix (PDF)","icon":"document-text-outline"}
+                ]'
                 data-project-gallery='[
-                  {"src":"./assets/images/Glider_Overhead.jpg","label":"Completed Glider Overhead","caption":"Top-down view of the completed powered glider, showing the wing planform and electronics installation."},
-                  {"src":"./assets/images/Glider_Sideways.jpg","label":"Completed Glider From Side","caption":"Side view of the completed glider showing the fuselage, wing, tail, and forward-mounted propulsion system with a foldable propeller."},
+                  {"src":"./assets/images/Glider_Overhead.jpg","label":"Completed Glider Overhead","caption":"Top-down view of the completed powered glider, showing the wing planform, twin-fin tail, and electronics installation."},
+                  {"src":"./assets/images/Glider_Sideways.jpg","label":"Completed Glider From Side","caption":"Side view of the completed glider showing the fuselage, wing, tail, and forward-mounted propulsion system."},
                   {"src":"./assets/images/Glider_Flying.jpg","label":"Glider in Flight","caption":"The powered glider during flight testing."},
                   {"src":"./assets/images/Data.png","label":"Flight Analysis Data","caption":"These curves plot performance and stability metrics against angle of attack (Alpha). CL versus Alpha defines the lift curve slope, CL/CD highlights the peak aerodynamic glide efficiency, and CD illustrates minimum parasite drag plus induced drag rise. Longitudinal static stability is dictated by the negative slope of Cm versus Alpha, where a nose-up disturbance creates an automatic nose-down restoring moment, while the Fz curve provides the actual dimensional lift in pounds across different flight speeds to verify trim against weight."},
                   {"src":"./assets/images/Data_Inviscid.png","label":"Flight Analysis Data (Inviscid)","caption":"These curves plot performance and stability metrics against angle of attack (Alpha). CL versus Alpha defines the lift curve slope, CL/CD highlights the peak aerodynamic glide efficiency, and CD illustrates minimum parasite drag plus induced drag rise. Longitudinal static stability is dictated by the negative slope of Cm versus Alpha, where a nose-up disturbance creates an automatic nose-down restoring moment, while the Fz curve provides the actual dimensional lift in pounds across different flight speeds to verify trim against weight."},
@@ -392,6 +418,43 @@
                 <p class="project-category">Aircraft Design &amp; Flight Testing</p>
               </a>
             </li>
+
+            <li class="project-item active" data-filter-item data-category="aircraft design &amp; flight testing"
+                data-project-title="Aggie Bullet: RC Aircraft for 2026 Design, Build, Fly Competition"
+                data-project-description="Worked as a Stability and Control subteam member, helping design, manufacture, and flight-test an electric RC aircraft for the 2025-2026 AIAA Design/Build/Fly competition to complete a test flight, charter cargo transport, and dynamic banner towing. The initial prototype, MK1, featured a swept-wing layout to minimize drag; however, flight tests revealed severe Dutch roll instability and control degradation at lower airspeeds. Incorporating full-scale flight telemetry and updated inertia estimations, the team rapidly pivoted to the refined MK2 design, implementing an unswept, untapered N22 wing with 3 degrees of dihedral and aerodynamic washout. This redesigned configuration eliminated Dutch roll issues, bolstered low-speed lift, and successfully supported mission payloads of up to 39 passengers and 6 cargo pucks alongside reliable deployment of a 70-inch banner."
+                data-project-tech="XFLR5, STAR-CCM+, Wind Tunnel, Python, RC Aircraft, Aircraft Design"
+                data-project-link="#"
+                data-project-resources='[
+                  {"href":"./assets/DR_DBF26.pdf","label":"Design Report (PDF)","icon":"document-text-outline"},
+                  {"href":"./assets/MK2_FINAL.xfl","label":"Download XFLR5 Model (.xfl)","icon":"download-outline","download":true}
+                ]'
+                data-project-gallery='[
+                  {"src":"./assets/images/CAD_Build(1).jpg","label":"CAD Design of Competition Aircraft (MK2)","caption":""},
+                  {"src":"./assets/images/CFD(1).jpg","label":"Computational Fluid Dynamics Analysis of MK2","caption":"STAR-CCM+ Reynolds-Averaged Navier-Stokes (RANS) simulations of the MK2 airframe were conducted to assess flow separation, static margin, and total drag across varying angles of attack. The analysis identified critical flow separation over the baseline nose cone, validating the implementation of a rounded nose profile to delay stall onset."},
+                  {"src":"./assets/images/Wind_Tunnel_2.jpg","label":"Wind Tunnel Testing of MK2","caption":"A 13.6% scale model of the aircraft was evaluated inside a subsonic wind tunnel to observe empirical lift trends across positive angles of attack. Although scale limitations prevented matched flight Reynolds numbers, the test confirmed the expected upward trend in lift generation."},
+                  {"src":"./assets/images/XFLR5(1).png","label":"XFLR5 Flight Analysis of MK2","caption":"XFLR5 analysis of the MK2 straight-wing configuration utilized distributed point masses to accurately resolve dynamic stability modes across all mission configurations. The model verified stable short period, roll, and Dutch roll responses, correcting the severe dynamic Dutch roll instabilities previously observed during flight testing of MK1."},
+                  {"src":"./assets/images/Team_Pic.jpg","label":"TAMU DBF Team at the AIAA Design/Build/Fly Competition in Wichita, KS","caption":""},
+                  {"src":"./assets/images/Personal_Pic.jpg","label":"Me with MK2 After Competition","caption":""}
+                ]'>
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/Cover_Image.jpg" alt="Aggie Bullet MK2 aircraft in flight" loading="lazy">
+                </figure>
+                <h3 class="project-title">Aggie Bullet: RC Aircraft for 2026 Design, Build, Fly Competition</h3>
+                <p class="project-category">Aircraft Design &amp; Flight Testing</p>
+              </a>
+            </li>
+
+            <!-- Remaining projects will be inserted below in this order:
+                 3. Eagle Scout Service Project
+                 4. SEAMATE ROV
+                 5. Island Tyme Aircraft Maintenance
+                 6. RC Aircraft
+                 7. CAD-Samples
+            -->
 
           </ul>
         </section>
@@ -429,8 +492,13 @@
 
                 <a href="#" class="project-modal-link" data-project-modal-link target="_blank" rel="noopener noreferrer">
                   <ion-icon name="open-outline"></ion-icon>
-                  <span>Appendix (PDF)</span>
+                  <span>View Project</span>
                 </a>
+
+                <div data-project-modal-resources-section style="display:none;">
+                  <h4 class="h4">Project Files</h4>
+                  <div class="project-modal-resources" data-project-modal-resources></div>
+                </div>
               </div>
             </div>
 
@@ -458,6 +526,50 @@
     if (projectGallery) {
       galleryCaptionObserver.observe(projectGallery, { childList: true, subtree: true });
     }
+
+    const projectResourceSection = document.querySelector('[data-project-modal-resources-section]');
+    const projectResourceContainer = document.querySelector('[data-project-modal-resources]');
+
+    const renderProjectResources = (project) => {
+      if (!projectResourceSection || !projectResourceContainer) return;
+
+      let resources = [];
+      try {
+        resources = JSON.parse(project.dataset.projectResources || '[]');
+      } catch (error) {
+        console.error('Invalid project resource data:', error);
+      }
+
+      projectResourceContainer.replaceChildren();
+
+      resources.forEach((resource) => {
+        const link = document.createElement('a');
+        link.className = 'project-resource-link';
+        link.href = resource.href;
+        link.rel = 'noopener noreferrer';
+
+        if (resource.download) {
+          link.setAttribute('download', '');
+        } else {
+          link.target = '_blank';
+        }
+
+        const icon = document.createElement('ion-icon');
+        icon.setAttribute('name', resource.icon || 'open-outline');
+
+        const label = document.createElement('span');
+        label.textContent = resource.label;
+
+        link.append(icon, label);
+        projectResourceContainer.append(link);
+      });
+
+      projectResourceSection.style.display = resources.length ? 'block' : 'none';
+    };
+
+    document.querySelectorAll('.project-item').forEach((project) => {
+      project.addEventListener('click', () => renderProjectResources(project));
+    });
   </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
