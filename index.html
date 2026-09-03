@@ -51,6 +51,33 @@
       margin-bottom: 4px;
     }
 
+    .gallery-item-caption .caption-section-title {
+      display: block;
+      margin: 14px 0 7px;
+      padding: 7px 10px;
+      border-left: 3px solid var(--orange-yellow-crayola);
+      border-radius: 4px;
+      background: hsla(45, 100%, 72%, 0.08);
+      color: var(--orange-yellow-crayola);
+      font-size: 14px;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .gallery-item-caption .caption-section-title:first-child {
+      margin-top: 0;
+    }
+
+    .gallery-item-caption .caption-term {
+      display: inline;
+      margin: 0;
+      color: var(--white-2);
+      font-size: inherit;
+      font-weight: 600;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
     /* ── Resume Tab ── */
     .resume-btn {
       display: inline-flex;
@@ -344,16 +371,15 @@
                 data-project-title="RC Powered Glider - Design and Flight Testing"
                 data-project-description="Designed and built a remote-controlled powered glider, using XFLR5 to evaluate stability and aerodynamic performance before flight testing. I analyzed sideslip behavior and key flight characteristics at 88 ft/s and 177 ft/s, then compared the predicted behavior with flight results and iterated the aircraft configuration, including tail changes and 3D-printed winglets."
                 data-project-tech="XFLR5, Fusion 360, 3D Printing, Woodworking, Electronics"
-                data-project-link="#"
+                data-project-link="./assets/RC_Powered_Glider_Appendix.pdf"
                 data-project-gallery='[
                   {"src":"./assets/images/Glider_Overhead.jpg","label":"Completed Glider Overhead","caption":"Top-down view of the completed powered glider, showing the wing planform, twin-fin tail, and electronics installation."},
                   {"src":"./assets/images/Glider_Sideways.jpg","label":"Completed Glider From Side","caption":"Side view of the completed glider showing the fuselage, wing, tail, and forward-mounted propulsion system."},
                   {"src":"./assets/images/Glider_Flying.jpg","label":"Glider in Flight","caption":"The powered glider during flight testing."},
                   {"src":"./assets/images/Data.png","label":"Flight Analysis Data","caption":"These curves plot performance and stability metrics against angle of attack (Alpha). CL versus Alpha defines the lift curve slope, CL/CD highlights the peak aerodynamic glide efficiency, and CD illustrates minimum parasite drag plus induced drag rise. Longitudinal static stability is dictated by the negative slope of Cm versus Alpha, where a nose-up disturbance creates an automatic nose-down restoring moment, while the Fz curve provides the actual dimensional lift in pounds across different flight speeds to verify trim against weight."},
-                  {"src":"./assets/images/Data_Inviscid.png","label":"Flight Analysis Data","caption":"These curves plot performance and stability metrics against angle of attack (Alpha). CL versus Alpha defines the lift curve slope, CL/CD highlights the peak aerodynamic glide efficiency, and CD illustrates minimum parasite drag plus induced drag rise. Longitudinal static stability is dictated by the negative slope of Cm versus Alpha, where a nose-up disturbance creates an automatic nose-down restoring moment, while the Fz curve provides the actual dimensional lift in pounds across different flight speeds to verify trim against weight."},
+                  {"src":"./assets/images/Data_Inviscid.png","label":"Flight Analysis Data (Inviscid)","caption":"These curves plot performance and stability metrics against angle of attack (Alpha). CL versus Alpha defines the lift curve slope, CL/CD highlights the peak aerodynamic glide efficiency, and CD illustrates minimum parasite drag plus induced drag rise. Longitudinal static stability is dictated by the negative slope of Cm versus Alpha, where a nose-up disturbance creates an automatic nose-down restoring moment, while the Fz curve provides the actual dimensional lift in pounds across different flight speeds to verify trim against weight."},
                   {"src":"./assets/images/Data_Sideslip.png","label":"Sideslip Analysis","caption":"These charts map aerodynamic moment coefficients against the sideslip angle Beta. The negative slope of Cl versus Beta confirms positive lateral stability via the dihedral effect, causing the aircraft to roll away from the slip to restore level flight. The positive slope of Cn versus Beta establishes positive directional weathercock stability, generating a restoring yawing moment that swings the nose back into the relative wind."},
-                  {"src":"./assets/images/Data_Lateral.png","label":"Root Locus / Eigenvalue Plots","caption":"These plots display Imag/2π (oscillation frequency in Hz) against Real values (damping rate). Roots falling to the left of the vertical axis signify dynamic stability. The longitudinal modes show a well-damped, high-frequency short-period mode further left alongside a low-frequency, lightly damped phugoid mode near the origin. The lateral-directional modes capture a heavily damped, non-oscillatory roll subsidence root, an oscillatory Dutch roll conjugate pair, and a slow spiral mode near the origin."},
-                  {"src":"./assets/images/Data_Longitudinal.png","label":"Root Locus / Eigenvalue Plots","caption":"These plots display Imag/2π (oscillation frequency in Hz) against Real values (damping rate). Roots falling to the left of the vertical axis signify dynamic stability. The longitudinal modes show a well-damped, high-frequency short-period mode further left alongside a low-frequency, lightly damped phugoid mode near the origin. The lateral-directional modes capture a heavily damped, non-oscillatory roll subsidence root, an oscillatory Dutch roll conjugate pair, and a slow spiral mode near the origin."}
+                  {"src":"./assets/images/Data_Longitudinal.png","label":"Root Locus / Eigenvalue Plots","caption":"\u003cstrong class=\"caption-section-title\"\u003eLongitudinal Dynamic Stability (Left Plot)\u003c/strong\u003eThis root locus maps frequency (f = Imag/2pi) against the damping rate (sigma = REAL) to capture pitch and airspeed dynamics. The conjugate pair situated far to the left at approximately -5.5 +/- 3.2i represents the \u003cstrong class=\"caption-term\"\u003eshort period\u003c/strong\u003e mode, indicating rapid pitch-attitude corrections with robust aerodynamic damping. The pair clustered tightly near the origin corresponds to the \u003cstrong class=\"caption-term\"\u003ephugoid\u003c/strong\u003e mode, reflecting long-period, lightly damped oscillations in pitch and forward velocity that gently exchange kinetic and potential energy.\u003cbr\u003e\u003cbr\u003e\u003cstrong class=\"caption-section-title\"\u003eLateral-Directional Dynamic Stability (Right Plot)\u003c/strong\u003eThis root locus displays damping rate on the horizontal axis and frequency on the vertical axis for coupled yaw and roll dynamics. The isolated real root deep along the negative axis near -25 governs \u003cstrong class=\"caption-term\"\u003eroll subsidence\u003c/strong\u003e, providing rapid aerodynamic decay of rolling velocity without oscillation. The conjugate pair at roughly -1.3 +/- 1.8i characterizes the oscillatory \u003cstrong class=\"caption-term\"\u003eDutch roll\u003c/strong\u003e mode, demonstrating solid damping against coupled yaw-roll wobbles. The single root located right at the origin represents the non-oscillatory \u003cstrong class=\"caption-term\"\u003espiral\u003c/strong\u003e mode, which dictates whether the airframe exhibits gentle wings-level recovery or a very slow, manageable banked turn divergence."}
                 ]'>
               <a href="#">
                 <figure class="project-img">
@@ -403,7 +429,7 @@
 
                 <a href="#" class="project-modal-link" data-project-modal-link target="_blank" rel="noopener noreferrer">
                   <ion-icon name="open-outline"></ion-icon>
-                  <span>View Project</span>
+                  <span>Appendix (PDF)</span>
                 </a>
               </div>
             </div>
@@ -418,6 +444,21 @@
   </main>
 
   <script src="./assets/js/script.js"></script>
+  <script>
+    // Preserve formatted engineering subheadings even if the existing gallery
+    // script inserts captions as plain text.
+    const galleryCaptionObserver = new MutationObserver(() => {
+      document.querySelectorAll('.gallery-item-caption').forEach((caption) => {
+        if (caption.textContent.includes('<strong class="caption-section-title">')) {
+          caption.innerHTML = caption.textContent;
+        }
+      });
+    });
+    const projectGallery = document.querySelector('[data-project-modal-gallery]');
+    if (projectGallery) {
+      galleryCaptionObserver.observe(projectGallery, { childList: true, subtree: true });
+    }
+  </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
