@@ -140,6 +140,11 @@
     .project-resource-link ion-icon {
       font-size: 18px;
     }
+
+    .filter-list {
+      flex-wrap: wrap;
+      row-gap: 10px;
+    }
   </style>
 </head>
 
@@ -248,21 +253,22 @@
 
         <section class="about-text">
           <p>
-            I am a second-year Aerospace Engineering student and student pilot at Texas A&amp;M University.
-            My interests center on aircraft design, aerodynamics, flight dynamics, aviation maintenance,
-            and the process of turning engineering analysis into hardware that can be built and tested.
+            I am a second-year Aerospace Engineering student, private pilot, and Eagle Scout at Texas A&amp;M University.
+            My technical interests center on aircraft design, aerodynamics, and flight dynamics, with the long-term
+            goal of advancing into rocketry and the space sector. As an out-of-state recipient of a full-tuition
+            scholarship, I am grateful for the opportunity to study aerospace engineering at one of the nation's
+            leading institutions.
           </p>
           <p>
-            Through aircraft design teams, personal RC aircraft projects, aviation maintenance, CAD,
-            rapid prototyping, and flight testing, I have developed a hands-on approach to solving
-            engineering problems. I am seeking opportunities to contribute these skills to aerospace
-            design teams and internships while continuing to grow as an engineer and pilot.
+            Alongside my coursework, I have earned Certiport certifications in Autodesk Inventor, Revit, and Python,
+            with plans to add a SolidWorks certification in the near future. Driven by a passion for hands-on flight
+            test operations, my ultimate goal is to build a career as a test pilot engineer and astronaut.
           </p>
         </section>
 
         <section class="service">
 
-          <h3 class="h3 service-title">What I'm doing</h3>
+          <h3 class="h3 service-title">What I'm Doing</h3>
 
           <ul class="service-list">
 
@@ -274,7 +280,8 @@
                 <h4 class="h4 service-item-title">Aircraft Design &amp; Aerodynamics</h4>
                 <p class="service-item-text">
                   Using XFLR5 and engineering trade studies to evaluate aircraft performance, stability,
-                  control authority, and aerodynamic configuration choices.
+                  control authority, and aerodynamic configuration choices. I am currently working to become
+                  more familiar with computational fluid dynamics, where I have some introductory experience.
                 </p>
               </div>
             </li>
@@ -287,20 +294,36 @@
                 <h4 class="h4 service-item-title">CAD &amp; Rapid Prototyping</h4>
                 <p class="service-item-text">
                   Designing components in Autodesk Inventor and Fusion 360, then producing and iterating
-                  parts through 3D printing, woodworking, and hands-on fabrication.
+                  parts through 3D printing, woodworking, and hands-on fabrication. I am currently gaining
+                  more experience with SolidWorks as I transition from the Autodesk tools I learned in high school.
                 </p>
               </div>
             </li>
 
             <li class="service-item">
               <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="circuit icon" width="40">
+                <img src="./assets/images/icon-design.svg" alt="RC aircraft design icon" width="40">
               </div>
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Aviation &amp; Aircraft Maintenance</h4>
+                <h4 class="h4 service-item-title">RC Aircraft</h4>
                 <p class="service-item-text">
-                  Building practical experience through flight training and hands-on airframe and powerplant
-                  maintenance, including work on Beechcraft Model 18 aircraft and Pratt &amp; Whitney R-985 engines.
+                  Building and flying remote-controlled aircraft while developing propulsion systems including solid
+                  rocket motors, electric ducted fans, and contra-rotating motors. I have also developed bomb-release
+                  mechanisms and cargo doors.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="pilot license icon" width="40">
+              </div>
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Pilot License</h4>
+                <p class="service-item-text">
+                  Currently finishing my private pilot license with approximately 45 flight hours. I completed my first
+                  solo at 7.5 hours and have been immersed in aviation throughout my life, as both of my parents are
+                  licensed pilots.
                 </p>
               </div>
             </li>
@@ -372,7 +395,19 @@
 
           <ul class="filter-list">
             <li class="filter-item">
-              <button class="active" data-filter-btn>ALL</button>
+              <button class="active" data-filter-btn>All</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Aircraft Design and Flight Testing</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Aircraft Maintenance</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Robotics &amp; Electronics</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Leadership and Service</button>
             </li>
           </ul>
 
@@ -384,13 +419,17 @@
               </div>
             </button>
             <ul class="select-list">
-              <li class="select-item"><button data-select-item>ALL</button></li>
+              <li class="select-item"><button data-select-item>All</button></li>
+              <li class="select-item"><button data-select-item>Aircraft Design and Flight Testing</button></li>
+              <li class="select-item"><button data-select-item>Aircraft Maintenance</button></li>
+              <li class="select-item"><button data-select-item>Robotics &amp; Electronics</button></li>
+              <li class="select-item"><button data-select-item>Leadership and Service</button></li>
             </ul>
           </div>
 
           <ul class="project-list">
 
-            <li class="project-item active" data-filter-item data-category="aircraft design &amp; flight testing"
+            <li class="project-item active" data-filter-item data-category="aircraft design and flight testing"
                 data-project-title="RC Powered Glider - Design and Flight Testing"
                 data-project-description="Designed and built a remote-controlled powered glider, using XFLR5 to evaluate stability and aerodynamic performance before flight testing. I analyzed sideslip behavior and key flight characteristics at 88 ft/s and 177 ft/s, then compared the predicted behavior with flight results and iterated the aircraft configuration, including tail changes and 3D-printed winglets."
                 data-project-tech="XFLR5, Fusion 360, 3D Printing, Woodworking, Electronics"
@@ -419,7 +458,7 @@
               </a>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="aircraft design &amp; flight testing"
+            <li class="project-item active" data-filter-item data-category="aircraft design and flight testing"
                 data-project-title="Aggie Bullet: RC Aircraft for 2026 Design, Build, Fly Competition"
                 data-project-description="Worked as a Stability and Control subteam member, helping design, manufacture, and flight-test an electric RC aircraft for the 2025-2026 AIAA Design/Build/Fly competition to complete a test flight, charter cargo transport, and dynamic banner towing. The initial prototype, MK1, featured a swept-wing layout to minimize drag; however, flight tests revealed severe Dutch roll instability and control degradation at lower airspeeds. Incorporating full-scale flight telemetry and updated inertia estimations, the team rapidly pivoted to the refined MK2 design, implementing an unswept, untapered N22 wing with 3 degrees of dihedral and aerodynamic washout. This redesigned configuration eliminated Dutch roll issues, bolstered low-speed lift, and successfully supported mission payloads of up to 39 passengers and 6 cargo pucks alongside reliable deployment of a 70-inch banner."
                 data-project-tech="XFLR5, STAR-CCM+, Wind Tunnel, Python, RC Aircraft, Aircraft Design"
@@ -448,7 +487,7 @@
               </a>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="leadership &amp; service"
+            <li class="project-item active" data-filter-item data-category="leadership and service"
                 data-project-title="Eagle Scout Service Project"
                 data-project-description="My Eagle Scout service project involved reconstructing the fire pit area at FAU's Pine Jog Conservation Center, which is used by elementary school students throughout the year for education and recreation. The site was originally in poor condition, with rotting benches, a broken firewood storage unit, and overgrown vegetation that created fire hazards and safety risks, especially because children are the site's primary users. To address these issues, I led the construction and installation of 12 new benches and a sturdy firewood storage structure while coordinating cleanup of the fire pit and surrounding area. The completed project provides a safer, more functional, and visually appealing space for students learning about Florida wildlife and conservation while supporting FAU Pine Jog's conservation education mission."
                 data-project-tech="Leadership, Project Management, Woodworking, Landscaping, Workshopping, Power Tools"
@@ -479,7 +518,7 @@
               </a>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="robotics &amp; embedded systems"
+            <li class="project-item active" data-filter-item data-category="robotics &amp; electronics"
                 data-project-title="SEAMATE ROV"
                 data-project-description="Designed, fabricated, and programmed an underwater remotely operated vehicle (ROV) as part of a high school team competing against collegiate teams at the SEA MATE robotics competition in Tampa, Florida. I modeled custom components—including propellers, motor mounts, and a fully functioning claw—in Autodesk Fusion 360 and manufactured them using filament and resin 3D printing. I also integrated onboard electronics controlled through a custom Python-based Xbox controller interface. During the competition, an enclosure failure caused a leak that water-damaged the internal Raspberry Pi, rendering the vehicle inoperable for the mission runs. Despite the structural failure, competing at the collegiate level provided invaluable hands-on engineering experience in mechanical design, iterative testing, embedded systems, and rapid prototyping under high-stakes constraints."
                 data-project-tech="Fusion 360, 3D Printing, Resin Printing, Prototyping, Python"
@@ -532,7 +571,7 @@
               </a>
             </li>
 
-            <li class="project-item active" data-filter-item data-category="aircraft restoration &amp; maintenance"
+            <li class="project-item active" data-filter-item data-category="aircraft maintenance"
                 data-project-title="N422XS Lightning"
                 data-project-description="Assisted professional engineers and A&amp;P mechanics across multiple stages of restoring a Cold War-era English Electric Lightning T.Mk.5 supersonic fighter jet (N422XS) to flight-ready condition. Growing up around the project through my father's involvement with the Anglo American Lightning Organisation, I actively contributed to a wide variety of maintenance tasks alongside the restoration crew, assisting directly with engine ground-run preparations, powerplant evaluations, and complex hydraulic subsystem testing. When the aircraft was sold in 2023 to an outside organization to complete the final push toward flight, I had already amassed invaluable practical exposure to vintage high-performance military aviation. Working inside the unique airframe provided a profound foundational understanding of afterburning jet propulsion, high-pressure hydraulic architectures, and the exacting maintenance tolerances required for Cold War-era supersonic interceptors."
                 data-project-description-label="About This Project &amp; Experience"
