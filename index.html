@@ -507,8 +507,32 @@
               </a>
             </li>
 
+            <li class="project-item active" data-filter-item data-category="aircraft maintenance"
+                data-project-title="Island Tyme Aircraft Maintenance"
+                data-project-description="Performed extensive hands-on airframe and powerplant maintenance on a fleet of Beechcraft Model 18 aircraft, logging practical experience directly toward an FAA A&amp;P certification. Executed heavy engine maintenance and overhauls on Pratt &amp; Whitney R-985 Wasp Junior radial engines, tackling demanding tasks such as full cylinder replacements, complete powerplant removals and installations, and routine fluid and ignition services. Across the airframe, handled a wide variety of maintenance jobs ranging from rigging and replacing flight control cables to troubleshooting electrical systems and performing delicate avionics work. In addition to technical repairs, maintained strict airworthiness standards and streamlined ground and flight-line logistics to support active international cargo routes between Florida and the Bahamas."
+                data-project-description-label="About This Experience"
+                data-project-tech="Troubleshooting, Workshopping, Maintenance"
+                data-project-tech-label="Skills"
+                data-project-link="#"
+                data-project-gallery='[
+                  {"src":"./assets/images/Island_Tyme_3.jpg","label":"Beech 18 Aircraft Worked On","caption":"The Beechcraft Model 18 (\u0022Twin Beech\u0022) is a classic all-metal, low-wing, twin-engine utility monoplane characterized by its modified tricycle landing gear and distinctive twin vertical stabilizers. It is most famously powered by two wing-mounted Pratt &amp; Whitney R-985 Wasp Junior 9-cylinder air-cooled radial engines, each producing 450 hp at 2,300 RPM."},
+                  {"src":"./assets/images/Island_Tyme_2.jpg","label":"Replacing Cylinder 2 on Left Engine","caption":""},
+                  {"src":"./assets/images/Cylinder_Damage.jpg","label":"Inside of Damaged Cylinder 2","caption":"Internal view of cylinder #2 showing severe bore scoring and sidewall galling that resulted in a total loss of cylinder power during flight. The damage was caused by improper piston-to-cylinder wall clearances from an inadequate cylinder rebuild, allowing the oversized piston assembly to expand under operational heat and scour the barrel."},
+                  {"src":"./assets/images/B18_Under.jpg","label":"Underside of Aircraft While Replacing Cowl Flap Cable","caption":""}
+                ]'>
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/Island_Tyme_Cover.jpg" alt="Ben Roth beside a Beechcraft Model 18 at Island Tyme" loading="lazy">
+                </figure>
+                <h3 class="project-title">Island Tyme Aircraft Maintenance</h3>
+                <p class="project-category">Aircraft Maintenance</p>
+              </a>
+            </li>
+
             <!-- Remaining projects will be inserted below in this order:
-                 5. Island Tyme Aircraft Maintenance
                  6. RC Aircraft
                  7. CAD-Samples
             -->
@@ -541,7 +565,7 @@
               </div>
 
               <div class="project-modal-details">
-                <h4 class="h4">About This Project</h4>
+                <h4 class="h4" data-project-modal-description-title>About This Project</h4>
                 <p class="project-modal-description" data-project-modal-description></p>
 
                 <h4 class="h4" data-project-modal-tech-title>Technologies Used</h4>
@@ -586,6 +610,7 @@
 
     const projectResourceSection = document.querySelector('[data-project-modal-resources-section]');
     const projectResourceContainer = document.querySelector('[data-project-modal-resources]');
+    const projectDescriptionTitle = document.querySelector('[data-project-modal-description-title]');
     const projectTechTitle = document.querySelector('[data-project-modal-tech-title]');
 
     const renderProjectResources = (project) => {
@@ -628,6 +653,9 @@
     document.querySelectorAll('.project-item').forEach((project) => {
       project.addEventListener('click', () => {
         renderProjectResources(project);
+        if (projectDescriptionTitle) {
+          projectDescriptionTitle.textContent = project.dataset.projectDescriptionLabel || 'About This Project';
+        }
         if (projectTechTitle) {
           projectTechTitle.textContent = project.dataset.projectTechLabel || 'Technologies Used';
         }
